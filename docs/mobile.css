@@ -1,0 +1,105 @@
+/* mobile.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* prevent second scrollbar */
+    background-color: #111;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background: #1c1c1c;
+    border-radius: 0;
+    padding: 20px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* only one scroll area */
+    -webkit-overflow-scrolling: touch; /* smooth on mobile */
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.question {
+    margin-bottom: 6%;
+}
+
+.question p {
+    font-size: 1.1em;
+}
+
+small {
+    font-size: 0.9em;
+}
+
+/* 50/50 buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.buttons button {
+    flex: 1;
+    font-size: 1.2em;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #222;
+    border: 1px solid #444;
+}
+
+.buttons button.active {
+    background-color: #007bff;
+}
+
+/* Inputs and dropdowns */
+.dropdown,
+input[type="number"],
+.slider {
+    font-size: 1.1em;
+    padding: 12px;
+    width: 100%;
+}
+
+#bmiQuestions {
+    flex-direction: column;
+}
+
+#bmiType,
+#weightInput,
+#heightInput {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.slider-labels {
+    font-size: 0.9em;
+}
+
+/* Submit button */
+.submit-btn {
+    font-size: 1.3em;
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.result {
+    font-size: 1.3em;
+    padding: 20px 0;
+    text-align: center;
+}
