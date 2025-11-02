@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Risk Survey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Diabetes Risk Survey</h1>
+    <form id="surveyForm">
+        <div><label>HighBP</label><input type="number" name="HighBP" min="0" max="1" required></div>
+        <div><label>HighChol</label><input type="number" name="HighChol" min="0" max="1" required></div>
+        <div><label>CholCheck</label><input type="number" name="CholCheck" min="0" max="1" required></div>
+
+        <div>
+            <label>Metric</label>
+            <select id="bmiType">
+                <option value="metric">kg / cm</option>
+                <option value="imperial">lbs / ft</option>
+            </select>
+            </div>
+            <div><label>Weight</label><input type="number" id="weightInput" required></div>
+            <div><label>Height</label><input type="number" id="heightInput" required></div>
+        <div id="bmiResult"></div>
+        <input type="hidden" name="BMI" id="BMI">
+
+        <div><label>Smoker</label><input type="number" name="Smoker" min="0" max="1" required></div>
+        <div><label>Stroke</label><input type="number" name="Stroke" min="0" max="1" required></div>
+        <div><label>HeartDiseaseorAttack</label><input type="number" name="HeartDiseaseorAttack" min="0" max="1" required></div>
+        <div><label>PhysActivity</label><input type="number" name="PhysActivity" min="0" max="1" required></div>
+        <div><label>Fruits</label><input type="number" name="Fruits" min="0" max="1" required></div>
+        <div><label>Veggies</label><input type="number" name="Veggies" min="0" max="1" required></div>
+        <div><label>HvyAlcoholConsump</label><input type="number" name="HvyAlcoholConsump" min="0" max="1" required></div>
+        <div><label>AnyHealthCare</label><input type="number" name="AnyHealthCare" min="0" max="1" required></div>
+        <div><label>NoDocbcCost</label><input type="number" name="NoDocbcCost" min="0" max="1" required></div>
+        <div><label>GenHlth (1–5)</label><input type="number" name="GenHlth" min="1" max="5" required></div>
+        <div><label>DiffWalk</label><input type="number" name="DiffWalk" min="0" max="1" required></div>
+        <div><label>Sex</label><input type="number" name="Sex" min="0" max="1" required></div>
+        <div><label>Age (1–13)</label><input type="number" name="Age" min="1" max="13" required></div>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
