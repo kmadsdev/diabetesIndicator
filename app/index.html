@@ -1,48 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diabetes Risk Survey</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diabetes Risk Survey</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Diabetes Risk Survey</h1>
-    <form id="surveyForm">
-        <div><label>HighBP</label><input type="number" name="HighBP" min="0" max="1" required></div>
-        <div><label>HighChol</label><input type="number" name="HighChol" min="0" max="1" required></div>
-        <div><label>CholCheck</label><input type="number" name="CholCheck" min="0" max="1" required></div>
+  <div class="container">
+    <h1>Diabetes Indicator</h1>
 
-        <div>
-            <label>Metric</label>
-            <select id="bmiType">
-                <option value="metric">kg / cm</option>
-                <option value="imperial">lbs / ft</option>
-            </select>
+    <form id="surveyForm" class="form">
+        <div class="question">
+            <p>Do you have high blood pressure?</p>
+            <div class="buttons">
+              <button type="button" data-value="1">Yes</button>
+              <button type="button" data-value="0">No</button>
             </div>
-            <div><label>Weight</label><input type="number" id="weightInput" required></div>
-            <div><label>Height</label><input type="number" id="heightInput" required></div>
-        <div id="bmiResult"></div>
-        <input type="hidden" name="BMI" id="BMI">
+            <input type="hidden" name="HighBP" required>
+          </div>
 
-        <div><label>Smoker</label><input type="number" name="Smoker" min="0" max="1" required></div>
-        <div><label>Stroke</label><input type="number" name="Stroke" min="0" max="1" required></div>
-        <div><label>HeartDiseaseorAttack</label><input type="number" name="HeartDiseaseorAttack" min="0" max="1" required></div>
-        <div><label>PhysActivity</label><input type="number" name="PhysActivity" min="0" max="1" required></div>
-        <div><label>Fruits</label><input type="number" name="Fruits" min="0" max="1" required></div>
-        <div><label>Veggies</label><input type="number" name="Veggies" min="0" max="1" required></div>
-        <div><label>HvyAlcoholConsump</label><input type="number" name="HvyAlcoholConsump" min="0" max="1" required></div>
-        <div><label>AnyHealthCare</label><input type="number" name="AnyHealthCare" min="0" max="1" required></div>
-        <div><label>NoDocbcCost</label><input type="number" name="NoDocbcCost" min="0" max="1" required></div>
-        <div><label>GenHlth (1–5)</label><input type="number" name="GenHlth" min="1" max="5" required></div>
-        <div><label>DiffWalk</label><input type="number" name="DiffWalk" min="0" max="1" required></div>
-        <div><label>Sex</label><input type="number" name="Sex" min="0" max="1" required></div>
-        <div><label>Age (1–13)</label><input type="number" name="Age" min="1" max="13" required></div>
+      <div class="question">
+        <p>Do you have high cholesterol?</p>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="HighChol" required>
+      </div>
 
-        <button type="submit">Submit</button>
+      <div class="question">
+        <p>Have you checked your cholesterol in the past 5 years?</p>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="CholCheck" required>
+      </div>
+
+      <div class="question" id="bmiQuestions">
+        <p>Metric:</p>
+        <select id="bmiType" class="dropdown">
+          <option value="metric">kg / cm</option>
+          <option value="imperial">lbs / ft</option>
+        </select>
+
+        <p>Weight</p>
+        <input type="number" id="weightInput" min="0" max="999" step="0.1" required>
+
+        <p>Height?</p>
+        <input type="number" id="heightInput" min="0" max="999" step="0.1" required>
+      </div>
+
+      <div id="bmiResult" class="bmi-text"></div>
+      <input type="hidden" name="BMI" id="BMI">
+
+      <div class="question">
+        <p>Did you smoke more than 100 cigarettes in your life?</p>
+        <small>(≈ 20 packs)</small>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="Smoker" required>
+      </div>
+
+      <div class="question">
+        <p>Did you ever get a stroke?</p>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="Stroke" required>
+      </div>
+
+      <div class="question">
+        <p>Do you have a heart disease (CHD or MI)?</p>
+        <small>CHD = coronary heart disease / MI = myocardial infarction</small>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="HeartDiseaseorAttack" required>
+      </div>
+
+      <div class="question">
+        <p>Have you done any physical activity in the past 30 days?</p>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="PhysActivity" required>
+      </div>
+
+      <div class="question">
+        <p>Do you consume at least 1 fruit per day?</p>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="Fruits" required>
+      </div>
+
+      <div class="question">
+        <p>Do you consume at least 1 vegetable per day?</p>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="Veggies" required>
+      </div>
+
+      <div class="question">
+        <p>Are you a heavy drinker?</p>
+        <small>Men: 14+ drinks/week | Women: 7+ drinks/week</small>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="HvyAlcoholConsump" required>
+      </div>
+
+      <div class="question">
+        <p>Do you have any kind of health care coverage?</p>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="AnyHealthCare" required>
+      </div>
+
+      <div class="question">
+        <p>Couldn't see a doctor in the past 12 months because of cost?</p>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="NoDocbcCost" required>
+      </div>
+
+      <div class="question" style="max-width: 95%;">
+        <p>How would you classify your general health?</p>
+        <input type="range" name="GenHlth" min="1" max="5" step="1" value="3" class="slider">
+        <div class="slider-labels">
+          <span>Excellent</span><span>Very good</span><span>Good</span><span>Fair</span><span>Poor</span>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Do you have difficulty walking or climbing stairs?</p>
+        <div class="buttons">
+          <button type="button" data-value="1">Yes</button>
+          <button type="button" data-value="0">No</button>
+        </div>
+        <input type="hidden" name="DiffWalk" required>
+      </div>
+
+      <div class="question">
+        <p>What's your sex?</p>
+        <div class="buttons">
+          <button type="button" id="inputSexM" data-value="1">Male</button>
+          <button type="button" id="inputSexF" data-value="0">Female</button>
+        </div>
+        <input type="hidden" name="Sex" required>
+      </div>
+
+      <div class="question">
+        <p>What's your age group?</p>
+        <select name="Age" required class="dropdown">
+          <option value="1">18–24</option>
+          <option value="2">25–29</option>
+          <option value="3">30–34</option>
+          <option value="4">35–39</option>
+          <option value="5">40–44</option>
+          <option value="6">45–49</option>
+          <option value="7">50–54</option>
+          <option value="8">55–59</option>
+          <option value="9">60–64</option>
+          <option value="10">65–69</option>
+          <option value="11">70–74</option>
+          <option value="12">75–79</option>
+          <option value="13">80+</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
     </form>
-    <div id="result"></div>
 
-    <script src="script.js" defer></script>
+    <div id="result" class="result"></div>
+  </div>
 </body>
 </html>
