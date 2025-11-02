@@ -1,5 +1,6 @@
 fastapi
-uvicorn
-joblib
-datetime
+uvicorn[standard]
 numpy
+joblib
+python-multipart
+datetime
