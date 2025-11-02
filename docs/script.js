@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!response.ok) throw new Error("API connection failed");
 
             const data = await response.json();
+            resultDiv.style.color = data.prediction === 1 ? "#00ff00" : "#ffff00"
             resultDiv.textContent = data.prediction === 1
                 ? `⚠️ You may have diabetes (${data.confidence}% confidence). Please see a doctor.`
                 : `✅ You likely don't have diabetes (${data.confidence}% confidence).`;
