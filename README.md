@@ -3,7 +3,7 @@ Diabetes Indicator is a survey website that asks you 17 questions to determine w
 > ⚠️ Disclaimer: This app is for informational and educational purposes only. It does not provide medical advice, diagnosis, or treatment. The results should not be taken as a medical opinion. If you have concerns about your health or the results, please consult a qualified healthcare professional.
 
 #### DEMO
-<video src="https://raw.githubusercontent.com/kmadsdev/diabetesIndicator/main/docs/assets/demo-17-11-2025.mp4" width="600" autoplay loop muted playsinline></video>
+![Demo](https://raw.githubusercontent.com/kmadsdev/diabetesIndicator/main/docs/assets/media/demo-2025-11-17.gif)
 
 #### Project Structure:
 ```
