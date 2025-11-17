@@ -11,6 +11,29 @@
 <body>
   <div class="container">
     <h1>Diabetes Indicator</h1>
+
+    <div class="hero">
+      <img src="assets/diabetes-chart.svg" class="header-image"/>
+      <p class="hero-text">
+        Answer some question to understand your risk of having diabetes.
+        <br>This is a Machine Learning model trained with public data from 
+        <a href="https://kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset"
+        >kaggle</a>.
+      </p>
+      <div class="disclaimer-label">
+        <p class="disclaimer-title">
+          <img src="assets/warning-blue.png" class="disclaimer-icon" />
+          <span>Disclaimer</span>
+        </p>
+        <p class="disclaimer-message">
+          This website is for informational and educational purposes only. 
+          The results should not be taken as a medical diagnosis or treatment. 
+          If you have concerns about your health or the results, 
+          please consult a qualified healthcare professional.
+        </p>
+      </div>
+    </div>
+
     <form id="surveyForm" class="form">
         <div class="question">
             <p>Do you have high blood pressure?</p>
@@ -188,6 +211,10 @@
       <button type="submit" class="submit-btn">Submit</button>
     </form>
     <div id="result" class="result"></div>
+
+    <div class="footer">
+      <span>Made by KMADS, More projects at <a href="https://kmads.dev" target="_blank" rel="noopener noreferrer">kmads.dev</a></p>
+    </div>
   </div>
 </body>
 </html>

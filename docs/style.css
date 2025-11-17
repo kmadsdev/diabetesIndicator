@@ -1,3 +1,6 @@
+*{
+    --primary-color: #007bff;
+}
 body {
     background-color: #111;
     color: #eee;
@@ -21,10 +24,42 @@ h1 {
     margin-bottom: 25px;
 }
 
+.hero{
+    width: 100%;
+    margin: 0 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-text a{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.header-image{
+    width: 100%;
+    height: auto;
+}
+.disclaimer-label{
+    display: flex;
+    align-items: space-around;
+    background-color: #333;
+    padding: 0 25px 0 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.disclaimer-title{
+    margin-right: 25px;
+    color: var(--primary-color);
+}
+.disclaimer-icon{
+    width:  80px;
+    height: 80px;
+}
+
+
 .question {
     margin: 0 0 5% 0;
 }
-
 .question p {
     font-weight: bold;
     margin-bottom: 6px;
@@ -56,8 +91,8 @@ small {
 }
 
 .buttons button.active {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .buttons button:hover {
@@ -82,7 +117,7 @@ small {
 
 .submit-btn {
     width: 100%;
-    background: #007bff;
+    background: var(--primary-color);
     border: none;
     border-radius: 8px;
     color: #fff;
@@ -93,7 +128,7 @@ small {
 }
 
 .submit-btn:hover {
-    background: #005dc1;
+    background: var(--primary-color);
 }
 
 .bmi-text {
@@ -119,4 +154,14 @@ small {
 #bmiQuestions {
     display: flex;
     flex-direction: row;
+}
+
+
+.footer{
+    margin: 40px 0 -15px 0;
+    text-align: center;
+}
+.footer a{
+    color: var(--primary-color);
+    text-decoration: none;
 }
